@@ -16,6 +16,12 @@ def get_llm_name_from_input(llm_input):
         "codellama_13b": "codellama:13b-instruct",
         "llama3_8b": "llama3:8b-instruct-q4_0",
         "mistral": "mistral:7b-instruct",
+        "qwen_abliterated": "huihui_ai/Qwen3.8-abliterated:latest",
+        "dolphin_mixtral_8x7b": "dolphin-mixtral:8x7b",
+        "llama2_uncensored_70b": "llama2-uncensored:70b",
+        "llama3_1_70b": "llama3.1:70b",
+        "dolphin_llama3_70b": "dolphin-llama3:70b",
+        "llama3_2_1b": "llama3.2:1b",
     }
 
     return llm_name_to_model_name[llm_input]

@@ -177,7 +177,7 @@ def fix_single_backslashes(source_code):
     return re.sub(pattern, replace, source_code)
 
 
-'''
+r'''
 def escape_string_for_json(source_code):
     # Function to escape individual JSON string values
     def escape_match(value):
@@ -196,7 +196,7 @@ def escape_string_for_json(source_code):
     pattern = r':\s*"(.*?)"(?=[,}])'
     escaped_code = re.sub(pattern, lambda m: ': "' + escape_match(m.group(1)) + '"', source_code)
     return escaped_code
-'''
+r'''
 
 
 def fix_json_like_string(json_like_string):

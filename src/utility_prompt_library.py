@@ -233,19 +233,19 @@ class PromptGenerator:
         return (
             f"\nHere are the behaviors you need to look for by analyzing the given function and modify them if they are present according to the previous given instructions:\n"
             f"1. A registry load point is created pointing to an executable in the Windows %appdata% or System32 directory.\n"
-            f"2. A registry key ending with SHELL\OPEN\COMMAND or SHELL\RUNAS\COMMAND is being modified.\n"
+            f"2. A registry key ending with SHELL\\OPEN\\COMMAND or SHELL\\RUNAS\\COMMAND is being modified.\n"
             f"3. The Winlogon registry key value is modified.\n"
-            f"4. The Run, RunOnce, RunServices, RunServicesOnce, RunOnceEx, or RunOnce\Setup key is being modified, with the registry value data referring to an executable in a temporary directory.\n"
+            f"4. The Run, RunOnce, RunServices, RunServicesOnce, RunOnceEx, or RunOnce\\Setup key is being modified, with the registry value data referring to an executable in a temporary directory.\n"
             f"5. An Environment registry key with the value 'SEE_MASK_NOZONECHECKS' is set to anything but 0.\n"
-            f"6. The AppInit_DLLs or LoadAppInit_DLLs values of the registry key \SOFTWARE\MICROSOFT\WINDOWS NT\CURRENTVERSION\WINDOWS is being modified.\n"
+            f"6. The AppInit_DLLs or LoadAppInit_DLLs values of the registry key \\SOFTWARE\\MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\WINDOWS is being modified.\n"
             f"7. Registry keys are being modified to enable firewall exceptions.\n"
             f"8. A registry load point is created pointing to an executable in the Windows %appdata%, %temp%, or %windir% directories and performs a check for a public IP address.\n"
             f"9. An exclusion path for Windows Defender is being added.\n"
-            f"10. The value 'DisableRegistryTools' or 'DisableTaskMgr' or both is being set to 1 in the registry key 'SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\POLICIES\SYSTEM'. \n"
-            f"11. The \CONTROLSET001\SERVICES\SCHEDULE registry key is added or modified in conjunction with a task creation.\n"
+            f"10. The value 'DisableRegistryTools' or 'DisableTaskMgr' or both is being set to 1 in the registry key 'SOFTWARE\\MICROSOFT\\WINDOWS\\CURRENTVERSION\\POLICIES\\SYSTEM'. \n"
+            f"11. The \\CONTROLSET001\\SERVICES\\SCHEDULE registry key is added or modified in conjunction with a task creation.\n"
             f"12. Attempts to turn off or disable the Windows Defender service through the command line via registry key.\n"
-            f"13. The 'AlternateShell' value in HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SafeBoot\ is being changed.\n"
-            f"14. The HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SafeBoot\ registry key or one of its subkeys is being deleted.\n" 
+            f"13. The 'AlternateShell' value in HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SafeBoot\\ is being changed.\n"
+            f"14. The HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SafeBoot\\ registry key or one of its subkeys is being deleted.\n" 
             f"Again, if you don't find any of these behaviors in the given function, you don't need to do any modification, just place the original code as it is.\n\n"
         )
     
@@ -267,12 +267,12 @@ class PromptGenerator:
     def file_system_modification_behaviors(self):
         return (
             f"\nHere are the behaviors you need to look for by analyzing the given function and modify them if they are present according to the previous given instructions:\n"
-            f"1. A file in a system directory (e.g., C:\WINDOWS) is being modified.\n"
+            f"1. A file in a system directory (e.g., C:\\WINDOWS) is being modified.\n"
             f"2. A file is being created in a Recycle Bin folder.\n"
             f"3. A scheduled task is being created that references the User Application Data directory (AppData).\n"
             f"4. A shortcut (LNK file) is being added to the Windows Startup folder.\n"
-            f"5. The Windows System Startup file (system.ini) is being modified in the Windows directory (C:\Windows).\n"
-            f"6. The Windows Hosts file named 'hosts' found in the SYSTEM32\Drivers\etc directory is being modified."
+            f"5. The Windows System Startup file (system.ini) is being modified in the Windows directory (C:\\Windows).\n"
+            f"6. The Windows Hosts file named 'hosts' found in the SYSTEM32\\Drivers\\etc directory is being modified."
             f"Again, if you don't find any of these behaviors in the given function, you don't need to do any modification, just place the original code as it is.\n\n"
         )
     
@@ -295,13 +295,13 @@ class PromptGenerator:
             f"1. An executable file is being copied and modified.\n"
             f"2. An executable file is being created on a USB drive.\n"
             f"3. A PE file is being modified and then deleted.\n"
-            f"4. An executable in a system directory (e.g., C:\WINDOWS) is being deleted.\n"
+            f"4. An executable in a system directory (e.g., C:\\WINDOWS) is being deleted.\n"
             f"5. Copying a certificate from a validly signed executable and insertion of it to another executable is being done.\n"
             f"6. A PE file is being copied to three or more locations.\n"
             f"7. An autorun.inf file is being created on the USB drive, enabling USB autorun.\n"
             f"8. A copy of PE file is being created on the USB drive.\n"
-            f"9. A Windows executable is being copied from the 'Windows\SysWOW64' or 'Windows\System32' directory and renamed.\n"
-            f"10. A PE file is being executed from the AppData\Roaming directory.\n"
+            f"9. A Windows executable is being copied from the 'Windows\\SysWOW64' or 'Windows\\System32' directory and renamed.\n"
+            f"10. A PE file is being executed from the AppData\\Roaming directory.\n"
             f"11. A file is being created and run from the Windows Debug folder.\n"
             f"12. A file with a name matching a Windows component (e.g., explorer.exe or svchost.exe) is being created in a suspicious location.\n"
             f"13. sc.exe binary is being executed with the 'sdset' parameter and options which set a restrictive DACL.\n"
@@ -1864,7 +1864,7 @@ def get_prompt(
         For example your response should look like this for a generated function named void func():\n
         ```json
         {
-        #include<iostream>\\n\\nvoid func() {\\n   std::cout << \\\"Found file in C:\\\Drive  \\\" << std::endl;\\n}\",
+        #include<iostream>\\n\\nvoid func() {\\n   std::cout << \\\"Found file in C:\\\\Drive  \\\" << std::endl;\\n}\",
         \"modified code\": \"
         \"comments\": \"This function prints a string to the standard output. It demonstrates basic output in C++ using cout.\"
         }
