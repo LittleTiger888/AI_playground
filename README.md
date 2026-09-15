@@ -42,10 +42,10 @@ LLMalMorph/
 
 ## 💻 Hardware and Environment Requirements
 All Experiments were conducted with a machine with machine with
-- 252 GB of RAM
-- AMD Ryzen Threadripper PRO 5965WX 24-Cores
-- Single RTX 3090 GPU for running local LLM with Ollama.
-- Ubuntu 20.04.6 LTS
+- 256 GB of RAM
+- AMD Ryzen Threadripper PRO  9980X  64-Cores
+- Two RTX 5090 GPU for running local LLM with Ollama.
+- Ubuntu 26.04 LTS
 
 ⚠️ Environment Disclaimer
 We recommend using a similar environment to the one described in this project for best results. Specifically:
