@@ -58,8 +58,8 @@ We recommend using a similar environment to the one described in this project fo
 
 ## ⚙️ Installation Instructions
 - Install ```ollama``` from this link: [Ollama Official Website.](https://ollama.com/download/linux) for running the LLM Locally on GPU. 
-- Create a new Python Virtual Environment with ```python -m venv path/to/venv```
-- Activate the Environment with ```source path/to/venv/bin/activate```
+- Create a new Python Virtual Environment with ```python -m venv venv```
+- Activate the Environment with ```source .venv/bin/activate```
 - Run ```pip install -r requirements.txt``` to install all dependencies in the environment
 
 
