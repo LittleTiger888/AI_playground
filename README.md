@@ -90,7 +90,7 @@ For clarity, assume the following:
 
 - You're mutating 5 functions in `file.c` of malware sample named **M**
 - Strategy used: `strategy 1`
-- LLM model used: `codestral`
+- LLM model used: `qwen_abliterated`
 - You have access to the **M** malware project with source-code from where you can compile to generate a malware executable.
 
 
